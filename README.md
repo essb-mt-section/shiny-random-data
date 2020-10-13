@@ -1,2 +1,5 @@
-# shiny_random_data
-Shiny app generating random data sets
+# Shiny Random Data
+Shiny app to generate random data sets
+
+
+(c) O. Lindemann <lindemann@essb.eur.nl>, MIT licence
