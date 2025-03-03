@@ -18,8 +18,9 @@ shinyUI(fluidPage(
             selectInput("dataset", "Dataset:",
                         choices = c("-- select --",
                                     "Teaching Method",
-                                    "Priming"
-                                    )),
+                                    "Priming",
+                                    "Aggression"
+                        )),
             textInput(inputId = "studentid",
                       label = "Student ID:",
                       value = NA),

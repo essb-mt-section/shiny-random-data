@@ -2,13 +2,16 @@ library(shiny)
 library(shinyjs)
 library(haven)
 library(withr)
+library(stringr)
 
 source("random_data_functions.R")
 
 get_data <- function(dataset_name, seed) {
     switch(dataset_name,
            "Teaching Method" = with_seed(seed, teaching_data()),
-           "Priming" = with_seed(seed, simulate_priming_data())
+           "Priming" = with_seed(seed, simulate_priming_data()),
+           "Aggression" = with_seed(seed, sample_from_sav(
+                          "data/Aggression_population.sav", nsamples=125))
     )
 }
 

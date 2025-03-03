@@ -1,5 +1,7 @@
-library(tidyverse)
+library(tibble)
+library(dplyr)
 library(permute)
+library(haven)
 
 teaching_data <- function() {
   #
@@ -99,4 +101,10 @@ simulate_priming_data <- function() {
   return(priming_data)
 }
 
-
+sample_from_sav <- function(file, nsamples) {
+  ## just an example, please look at original SPSS syntax and adapt sampling procedure 
+  rtn = read_sav(file) %>%
+    slice_sample(n=nsamples) %>%
+    select(-rv, -rv2)
+  return(rtn)
+}
